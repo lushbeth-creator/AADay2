@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propelr: Evolution of Fee Reduction Programs</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:transparent;font-family:'Inter',sans-serif;color:#1a1a2e;padding:.5rem}
+
+.eyebrow{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#59A398;margin-bottom:10px}
+.ptitle{font-family:'Inter',sans-serif;font-weight:700;font-size:20px;color:#202A46;margin-bottom:12px}
+.pbody{font-size:18px;color:#444;line-height:1.75;margin-bottom:32px}
+
+/* ===== Ascending stairs ===== */
+.stairs-wrap{overflow-x:auto;padding-bottom:6px}
+.stairs-row{display:flex;align-items:flex-end;gap:10px;min-width:860px;position:relative}
+.stair-col{display:flex;flex-direction:column;align-items:center;flex:1;text-align:center}
+
+.stair-content{display:flex;flex-direction:column;align-items:center;margin-bottom:8px}
+.stair-icon{
+  width:40px;height:40px;border-radius:10px;flex-shrink:0;margin-bottom:8px;
+  background:linear-gradient(to bottom,#F3F6FF 0%,#E4E9F7 100%);
+  border:1px solid #A6B3D5;display:flex;align-items:center;justify-content:center;
+}
+.stair-icon svg{width:19px;height:19px;stroke:#59A398;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stair-col.finale .stair-icon{background:linear-gradient(to bottom,#DAF3EF 0%,#c9ece5 100%);border-color:#59A398}
+.stair-col.finale .stair-icon svg{stroke:#202A46}
+
+.stair-year{font-size:13px;font-weight:700;color:#5D70AE;margin-bottom:2px}
+.stair-label{font-size:12.5px;color:#444;line-height:1.4;max-width:118px}
+
+.stair-connector{width:2px;height:18px;background:#A6B3D5;margin-bottom:0}
+
+.stair-block{
+  width:100%;border-radius:8px 8px 0 0;border:1px solid #A6B3D5;border-bottom:none;
+  background:linear-gradient(180deg,#DAF3EF 0%,#D3DBF2 100%);
+}
+.stairs-baseline{height:3px;background:#A6B3D5;border-radius:2px;min-width:860px;margin-top:0}
+
+/* ===== Ask the Room ===== */
+.ask-room{background:#ffffff;border-left:4px solid #59A398;border-radius:0 12px 12px 0;padding:16px 20px;margin:28px 0 0}
+.ask-room-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#59A398;margin-bottom:6px}
+.ask-room-text{font-size:16px;color:#202A46;font-weight:600;line-height:1.5}
+
+/* ===== Compliance caution ===== */
+.caution-note{background:#fff8e6;border-left:4px solid #B8860B;border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0 0}
+.caution-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B8860B;margin-bottom:6px}
+.caution-text{font-size:15px;color:#9C6B00;line-height:1.55}
+
+/* ===== Reflect ===== */
+.reflect-label{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#59A398;margin-top:24px;margin-bottom:6px}
+.reflect-text{font-size:18px;color:#444;font-style:italic;line-height:1.75}
+</style>
+</head>
+<body>
+
+<p class="ptitle">Dual pricing and surcharging weren't always legal.</p>
+<p class="pbody">Both programs exist today because of a specific chain of federal law, antitrust litigation, and a Supreme Court ruling. Watch what happens with each new step up.</p>
+
+<div class="stairs-wrap">
+  <div class="stairs-row">
+
+    <div class="stair-col">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 4L20 20M20 4L4 20"/></svg></span>
+        <p class="stair-year">Before 1980</p>
+        <p class="stair-label">Card networks simply ban surcharging.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:32px"></div>
+    </div>
+
+    <div class="stair-col">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/></svg></span>
+        <p class="stair-year">The 1980s</p>
+        <p class="stair-label">States write the ban into law too.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:56px"></div>
+    </div>
+
+    <div class="stair-col">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <p class="stair-year">2010&ndash;11</p>
+        <p class="stair-label">Durbin protects the cash discount nationwide.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:84px"></div>
+    </div>
+
+    <div class="stair-col">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/><path d="M3 7l6-4 6 5 6-5"/></svg></span>
+        <p class="stair-year">Jan 2013</p>
+        <p class="stair-label">Visa &amp; Mastercard drop their own ban.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:114px"></div>
+    </div>
+
+    <div class="stair-col">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 21h14"/><path d="M5 7l2-4h10l2 4"/><circle cx="7" cy="12" r="3"/><circle cx="17" cy="12" r="3"/></svg></span>
+        <p class="stair-year">2013&ndash;15</p>
+        <p class="stair-label">Courts strike down state bans as unconstitutional.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:146px"></div>
+    </div>
+
+    <div class="stair-col">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M8.5 12l2.3 2.3 4.8-5"/></svg></span>
+        <p class="stair-year">2017</p>
+        <p class="stair-label">The Supreme Court rules it's a speech issue.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:180px"></div>
+    </div>
+
+    <div class="stair-col finale">
+      <div class="stair-content">
+        <span class="stair-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v12"/><path d="M15 9.5c0-1.5-1.5-2.5-3-2.5s-3 1-3 2.25c0 1.5 1.5 2 3 2.25s3 .75 3 2.25c0 1.25-1.5 2.25-3 2.25s-3-1-3-2.5"/></svg></span>
+        <p class="stair-year">Today</p>
+        <p class="stair-label">A patchwork by state, and a safer nationwide default.</p>
+      </div>
+      <div class="stair-connector"></div>
+      <div class="stair-block" style="height:216px"></div>
+    </div>
+
+  </div>
+  <div class="stairs-baseline"></div>
+</div>
+
+<div class="ask-room">
+  <p class="ask-room-label">Worth Noting</p>
+  <p class="ask-room-text">Gas stations have posted a cash price and a credit price side by side for decades, long before any of this became common elsewhere. One product, one sign, made them the earliest adopters of dual pricing, and still the easiest real-world example to point to when a merchant asks what this actually looks like.</p>
+</div>
+
+<div class="caution-note">
+  <p class="caution-label">Compliance Caution</p>
+  <p class="caution-text">Card brand rate caps and state law are not the same thing, and both change over time. Never quote a specific surcharge cap or represent a state as "cleared" from memory alone, always confirm current requirements with Propelr Compliance or Legal before a program goes live.</p>
+</div>
+
+<p class="reflect-label">Reflect</p>
+<p class="reflect-text">Two moments created the landscape you're selling into: a 2010 law that made cash discounting safe everywhere, and a 2013 settlement that made surcharging possible almost everywhere. When you're not sure which state you're standing in, lead with the one that doesn't have an "almost" attached to it.</p>
+
+</body>
+</html>
