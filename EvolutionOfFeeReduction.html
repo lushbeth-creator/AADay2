@@ -41,41 +41,28 @@
 
     .milestones {
       display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
       gap:10px;
       margin-bottom:22px;
     }
     .milestone {
-      display:inline-flex;
+      flex:1;
+      display:flex;
+      flex-direction:column;
       align-items:center;
-      gap:10px;
-      padding:8px 18px 8px 8px;
-      border:1px solid var(--purple);
+      text-align:center;
+      padding:10px 12px;
+      border:1px solid var(--blue);
       border-radius:999px;
-      background:linear-gradient(to bottom,#ffffff 0%,var(--light-blue) 100%);
+      background:linear-gradient(135deg,#ffffff 0%,var(--light-blue) 100%);
       color:var(--navy);
       cursor:pointer;
       transition:background .15s ease,border-color .15s ease,color .15s ease;
     }
-    .milestone:hover { border-color:var(--blue); background:linear-gradient(to bottom,#ffffff 0%,var(--light-blue) 100%); }
-    .marker {
-      display:grid;
-      place-items:center;
-      width:34px;
-      height:34px;
-      flex-shrink:0;
-      color:var(--blue);
-      background:#ffffff;
-      border-radius:50%;
-      transition:background .18s ease,color .18s ease;
-    }
-    .marker svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-    .milestone-text { display:flex; flex-direction:column; text-align:left; }
+    .milestone:hover { border-color:var(--green); background:linear-gradient(135deg,#ffffff 0%,var(--light-mint) 100%); }
+    .milestone-text { display:flex; flex-direction:column; text-align:center; }
     .year { display:block; margin-bottom:2px; color:var(--green); font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
-    .name { display:block; color:var(--navy); font-size:15px; font-weight:700; line-height:1.2; white-space:nowrap; }
+    .name { display:block; color:var(--navy); font-size:15px; font-weight:700; line-height:1.2; }
     .milestone[aria-selected="true"] { background:var(--green); border-color:var(--green); color:#ffffff; }
-    .milestone[aria-selected="true"] .marker { color:var(--green); }
     .milestone[aria-selected="true"] .year,
     .milestone[aria-selected="true"] .name { color:#ffffff; }
     .milestone:focus-visible { outline:3px solid var(--purple); outline-offset:3px; border-radius:999px; }
@@ -109,12 +96,16 @@
     .callout p { margin:0; font-size:18px; line-height:1.6; color:var(--ink); }
 
     .caution {
-      padding:20px 22px;
-      border:1px solid #B8860B;
-      border-radius:16px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:14px 18px;
+      border-left:5px solid #B8860B;
+      border-radius:0 12px 12px 0;
       background:#FFF8E6;
       margin-bottom:20px;
     }
+    .caution svg { flex:0 0 auto; width:22px; height:22px; margin-top:2px; }
     .caution-label { margin:0 0 6px; color:#B8860B; font-size:14px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
     .caution p { margin:0; font-size:18px; line-height:1.6; color:#9C6B00; }
 
@@ -122,7 +113,8 @@
     .reflect-text { font-size:18px; color:var(--ink); font-style:italic; line-height:1.75; margin:0; }
 
     @media (max-width:900px) {
-      .milestones { grid-template-columns:repeat(3,1fr); }
+      .milestones { flex-wrap:wrap; }
+      .milestone { flex:1 1 30%; }
     }
   </style>
 </head>
@@ -135,32 +127,25 @@
 
     <div class="milestones" role="tablist" aria-label="Fee reduction program milestones">
       <button class="milestone" role="tab" id="tab-0" aria-controls="fee-detail" aria-selected="true" data-index="0">
-        <span class="marker"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 4L20 20M20 4L4 20"/></svg></span>
         <span class="milestone-text"><span class="year">Before 1980</span><span class="name">Networks ban it</span></span>
       </button>
       <button class="milestone" role="tab" id="tab-1" aria-controls="fee-detail" aria-selected="false" data-index="1">
-        <span class="marker"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7z"/></svg></span>
         <span class="milestone-text"><span class="year">The 1980s</span><span class="name">States codify it</span></span>
       </button>
       <button class="milestone" role="tab" id="tab-2" aria-controls="fee-detail" aria-selected="false" data-index="2">
-        <span class="marker"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
-        <span class="milestone-text"><span class="year">2010&ndash;11</span><span class="name">Durbin protects it</span></span>
+        <span class="milestone-text"><span class="year">2010&ndash;11</span><span class="name">Dodd-Frank protects it</span></span>
       </button>
       <button class="milestone" role="tab" id="tab-3" aria-controls="fee-detail" aria-selected="false" data-index="3">
-        <span class="marker"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/><path d="M3 7l6-4 6 5 6-5"/></svg></span>
         <span class="milestone-text"><span class="year">Jan 2013</span><span class="name">Networks drop ban</span></span>
       </button>
       <button class="milestone" role="tab" id="tab-4" aria-controls="fee-detail" aria-selected="false" data-index="4">
-        <span class="marker"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 21h14"/><path d="M5 7l2-4h10l2 4"/><circle cx="7" cy="12" r="3"/><circle cx="17" cy="12" r="3"/></svg></span>
         <span class="milestone-text"><span class="year">2013&ndash;15</span><span class="name">Courts strike bans</span></span>
       </button>
       <button class="milestone" role="tab" id="tab-5" aria-controls="fee-detail" aria-selected="false" data-index="5">
-        <span class="marker"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M8.5 12l2.3 2.3 4.8-5"/></svg></span>
         <span class="milestone-text"><span class="year">2017</span><span class="name">Supreme Court rules</span></span>
       </button>
       <button class="milestone" role="tab" id="tab-6" aria-controls="fee-detail" aria-selected="false" data-index="6">
-        <span class="marker"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v12"/><path d="M15 9.5c0-1.5-1.5-2.5-3-2.5s-3 1-3 2.25c0 1.5 1.5 2 3 2.25s3 .75 3 2.25c0 1.25-1.5 2.25-3 2.25s-3-1-3-2.5"/></svg></span>
-        <span class="milestone-text"><span class="year">Today</span><span class="name">A safer default</span></span>
+        <span class="milestone-text"><span class="year">Today</span><span class="name">Dual pricing is default</span></span>
       </button>
     </div>
 
@@ -174,14 +159,15 @@
       <p class="detail-summary" id="detailSummary"></p>
     </article>
 
-    <div class="callout">
+    <div class="callout" id="worthNoting" style="display:none">
       <p class="callout-label">Worth Noting</p>
       <p>Gas stations have posted a cash price and a credit price side by side for decades, long before any of this became common elsewhere. One product, one sign, made them the earliest adopters of dual pricing, and still the easiest real-world example to point to when a merchant asks what this actually looks like.</p>
     </div>
 
     <div class="caution">
-      <p class="caution-label">Compliance Caution</p>
-      <p>Card brand rate caps and state law are not the same thing, and both change over time. Never quote a specific surcharge cap or represent a state as "cleared" from memory alone, always confirm current requirements with Propelr Compliance or Legal before a program goes live.</p>
+      <svg viewBox="0 0 24 24"><path d="M12 2 1 21h22L12 2Z" fill="#B8860B"/><path d="M12 9.5v5" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="1.1" fill="#fff"/></svg>
+      <div><p class="caution-label">Compliance Caution</p>
+      <p>Card brand rate caps and state law are not the same thing, and both change over time. Never quote a specific surcharge cap or represent a state as "cleared" from memory alone, always confirm current requirements with Propelr Compliance or Legal before a program goes live.</p></div>
     </div>
 
     <p class="reflect-label">Reflect</p>
@@ -202,8 +188,8 @@
       },
       {
         kicker: "Federal Law",
-        title: "Durbin protects the cash discount nationwide.",
-        summary: "The Durbin Amendment protected a merchant's ability to offer a cash discount nationwide."
+        title: "The Dodd-Frank Act, and the Durbin Amendment inside it, protect cash discounts nationwide.",
+        summary: "The 2010 Dodd-Frank Wall Street Reform and Consumer Protection Act included the Durbin Amendment, which specifically protected a merchant's right to offer a discount for paying with cash. That protection made cash discounting safe nationwide, regardless of state surcharge bans."
       },
       {
         kicker: "Network Policy",
@@ -222,8 +208,8 @@
       },
       {
         kicker: "Current Landscape",
-        title: "A patchwork by state, and a safer nationwide default.",
-        summary: "Today the landscape is a patchwork by state, but cash discounting remains the safer nationwide default."
+        title: "Dual pricing, not a blanket \"cash discount,\" is the compliant standard today.",
+        summary: "The surcharge landscape is still a patchwork by state, but dual pricing, showing a cash price and a card price at the point of sale, is the safer nationwide standard. A blanket \"cash discount\" framed only as a penalty for using a card can drift into an unlawful surcharge if it is not structured this way."
       }
     ];
 
@@ -242,6 +228,7 @@
       document.getElementById('detailKicker').textContent = item.kicker;
       document.getElementById('detailTitle').textContent = item.title;
       document.getElementById('detailSummary').textContent = item.summary;
+      document.getElementById('worthNoting').style.display = (index === 1) ? 'block' : 'none';
       if (moveFocus) tabs[index].focus();
     }
 
